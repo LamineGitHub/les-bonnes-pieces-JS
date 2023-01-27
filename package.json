@@ -1,0 +1,23 @@
+{
+  "name": "les-bonnes-pieces",
+  "version": "1.0.0",
+  "description": "__Ce code est modifié par moi__ voici le dépôt original du\r code [Les bonnes pieces](https://github.com/OpenClassrooms-Student-Center/7697016-Front-End.1)",
+  "main": "pieces.js",
+  "scripts": {
+    "start": "http-server",
+    "dev": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LamineGitHub/les-bonnes-pieces-JS.git"
+  },
+  "author": "Mamadou Lamine Diallo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LamineGitHub/les-bonnes-pieces-JS/issues"
+  },
+  "homepage": "https://github.com/LamineGitHub/les-bonnes-pieces-JS#readme",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

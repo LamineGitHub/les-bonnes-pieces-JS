@@ -1,6 +1,7 @@
 # Les Bonnes Pièces de *Openclassroom*
 
-ce code est modifié par moi voici le code original 
+
+__Ce code est modifié par moi__ voici le dépôt original du code [Les bonnes pieces](https://github.com/OpenClassrooms-Student-Center/7697016-Front-End.1)
 
 Code base du fil rouge pour le cours OpenClassrooms [Créez des pages web dynamiques avec JavaScript](https://openclassrooms.com/fr/courses/7697016-creez-des-pages-web-dynamiques-avec-javascript)
 
