@@ -1,22 +1,45 @@
 import {generatePieces, removeClass, sectionFiches, toggleClass} from "./function.js";
+import {addListenerFormAvis} from "./avis.js";
 
 // Recuperation des pièces depuis le fichier JSON
-const pieces = await fetch("pieces-autos.json")
-    .then(piece => piece.json())
+/*const pieces = await fetch("pieces-autos.json")
+    .then(piece => piece.json())*/
+
+let pieces = window.localStorage.getItem("pieces")
+
+if (pieces === null) {
+    /* Récupérer les données du serveur local et les convertir en JSON. */
+    const pieces = await fetch("http://localhost:8081/pieces")
+        .then(piece => piece.json())
+
+    const valuePieces = JSON.stringify(pieces)
+    window.localStorage.setItem("pieces", valuePieces)
+} else {
+    pieces = JSON.parse(pieces)
+}
+
 
 generatePieces(pieces)
+
+addListenerFormAvis()
 
 const btnSortAsc = document.querySelector(".btn-sort-asc")
 const btnSortDesc = document.querySelector(".btn-sort-desc")
 const btnSortAbordable = document.querySelector(".btn-filtrer-prix")
 const btnSortDescription = document.querySelector(".btn-filtrer-desc")
 
-const numberRange = document.querySelector('.span')
+const numberPieces = document.querySelector('#id')
+numberPieces.setAttribute("max", `${pieces.length}`)
+
 
 document.querySelector('#range')
     .addEventListener('input', function (e) {
-        numberRange.innerText = `${e.target.value} €`
+        /* Suppression de la classe "active" de tous les boutons. */
         removeClass("active", btnSortAsc, btnSortDesc, btnSortAbordable, btnSortDescription)
+
+        document.querySelector('.span')
+            .innerText = `${e.target.value} €`
+
         const piecesFiltrer = pieces.filter((piece) => piece.prix <= e.target.value)
 
         sectionFiches.innerHTML = ""
@@ -65,3 +88,6 @@ btnSortDescription.addEventListener("click", function () {
     generatePieces(piecesWithDesc)
 })
 
+document.querySelector('.btn-maj').addEventListener('click',() => {
+        window.localStorage.removeItem("pieces")
+    })
