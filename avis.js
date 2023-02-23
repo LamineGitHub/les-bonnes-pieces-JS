@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* global Chart */
 /**
  * Une fonction qui est appelée lorsque la page est chargée. Il ajoute un écouteur d'événement à
  * chaque bouton. Lorsque le bouton est cliqué, il récupère les commentaires du serveur et les
