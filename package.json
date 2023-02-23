@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/LamineGitHub/les-bonnes-pieces-JS#readme",
   "dependencies": {
+    "chart.js": "^4.2.1",
     "http-server": "^14.1.1"
   }
 }
